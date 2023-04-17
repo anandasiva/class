@@ -1,0 +1,75 @@
+<h1>ngClass</h1>
+
+<div class="section">
+  <b>Example 1: Assigning String</b> <br />
+  <div [ngClass]="'primary big'">Sample Text</div>
+</div>
+
+<div class="section">
+  <b>Example 2: Assigning String directly</b> <br />
+  <div ngClass="primary big">Sample Text</div>
+</div>
+
+<div class="section">
+  <b>Example 3: Assigning Arrays</b> <br />
+  <b>Example 3A</b> <br />
+  <div [ngClass]="['primary', 'big']">Sample Text</div>
+
+  <b>Example 3B</b> <br />
+  <div [ngClass]="['primary big', 'italics']">Sample Text</div>
+</div>
+
+<div class="section">
+  <b>Example 4: Assigning Object</b> <br />
+  <b>Example 4A</b> <br />
+  <div [ngClass]="{ primary: true, big: true }">Sample Text</div>
+
+  <b>Example 4B</b> <br />
+  <div [ngClass]="{ primary: true, big: false }">Sample Text</div>
+
+  <b>Example 4C</b> <br />
+  <div [ngClass]="{ 'primary italics': true, big: true }">Sample Text</div>
+
+  <b>Example 4D</b> <br />
+  <div [ngClass]="{ 'is-active': true, big: true }">Sample Text</div>
+</div>
+
+<div class="section">
+  <b>Example 5: Value comming from the component method</b> <br />
+  <b>Example 5A (string)</b> <br />
+  <div [ngClass]="cssVar">Sample Text</div>
+
+  <b>Example 5B (array)</b> <br />
+  <div [ngClass]="cssArray">Sample Text</div>
+
+  <b>Example 5C (Object)</b> <br />
+  <div [ngClass]="cssClass">Sample Text</div>
+</div>
+
+<div class="section">
+  <b>Example 6: Change CSS Classes from component</b> <br />
+  <div [ngClass]="flag ? 'primary' : 'secondary'">
+    Sample Text
+    <button (click)="flag = !flag">Change Color</button>
+  </div>
+</div>
+
+<div class="section">
+  <b>Example 7: Conditionaly apply the CSS</b> <br />
+  <ul>
+    <li *ngFor="let num of numbers">
+      <div [ngClass]="getClass(num)">{{ num }}</div>
+    </li>
+  </ul>
+</div>
+
+<div class="section">
+  <b>Example 8: Conditionaly apply the CSS</b> <br />
+  <ul>
+    <li *ngFor="let num of numbers">
+      <div [ngClass]="{ primary: num <= 50, secondary: num > 50 }">
+        {{ num }}
+      </div>
+    </li>
+  </ul>
+</div>
